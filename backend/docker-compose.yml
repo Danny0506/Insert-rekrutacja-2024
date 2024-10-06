@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'recruitment'
+      MYSQL_USER: 'recruitment'
+      MYSQL_PASSWORD: 'recruitment'
+      MYSQL_ROOT_PASSWORD: 'recruitment'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+
+  adminer:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+    ports:
+      - '8080:8080'

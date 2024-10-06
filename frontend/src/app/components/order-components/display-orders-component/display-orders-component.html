@@ -1,0 +1,52 @@
+<div class="center">
+  <h1>Zamówienia</h1>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Nr identyfikacyjny </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nameOfOrder">
+      <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+      <td mat-cell *matCellDef="let element"> {{element.nameOfOrder}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="orderPrice">
+      <th mat-header-cell *matHeaderCellDef> Cena </th>
+      <td mat-cell *matCellDef="let element"> {{element.orderPrice}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dateOfOrder">
+      <th mat-header-cell *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let element"> {{element.dateOfOrder | datePipe}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Opis </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sender">
+      <th mat-header-cell *matHeaderCellDef> Nadawca </th>
+      <td mat-cell *matCellDef="let element"> {{element.sender}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="receiver">
+      <th mat-header-cell *matHeaderCellDef> Odbiorca </th>
+      <td mat-cell *matCellDef="let element"> {{element.receiver}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br><br>
+  <button mat-raised-button routerLink="" routerLinkActive="active">
+    Powrót do menu głównego
+  </button>
+</div>
